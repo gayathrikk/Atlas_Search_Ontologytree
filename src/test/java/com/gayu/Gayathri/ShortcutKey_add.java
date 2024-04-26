@@ -24,7 +24,7 @@ public class ShortcutKey_add {
 	@BeforeTest
 	public void setup() throws MalformedURLException {
 		DesiredCapabilities dc = DesiredCapabilities.chrome();
-		URL url = new URL("http://172.12.20.99:4443/wd/hub");
+		URL url = new URL("http://172.12.20.99:4444/wd/hub");
 		driver = new RemoteWebDriver(url, dc);
 	}
 
@@ -102,7 +102,7 @@ public class ShortcutKey_add {
 		try {
 			WebDriverWait wait7 = new WebDriverWait(driver, 30);
 			WebElement table2 = wait7.until(ExpectedConditions.elementToBeClickable(By.xpath(
-					"//*[@id=\"column\"]/ngx-series-set-comp/div/ngx-explore-comp/nb-layout/div[1]/div/div/div/div/nb-layout-column[2]/nb-card/nb-card-body/div[2]/div/nb-card/nb-card-footer/nb-icon[1]/img")));
+					"/html/body/ngx-app/ngx-annotation/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-series-set-comp/div/ngx-explore-comp/nb-layout/div/div/div/div/div/nb-layout-column[2]/nb-card/nb-card-body/div/div[2]/div/nb-card/nb-card-footer/nb-icon[1]/img")));
 			table2.click();
 			System.out.println("--------------------------*****************-----------------------");
 			System.out.println("The Altas Editor is clicked");
