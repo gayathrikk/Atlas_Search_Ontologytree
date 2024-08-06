@@ -176,7 +176,7 @@ public class search_validating {
 					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='1_anchor']")));
 			brainId.click();
 			String t1 = brainId.getText();
-			String expectedText = "brain";
+			String expectedText = "Brain";
 			Assert.assertEquals(t1, expectedText);
 			System.out.println("Assertion passed: " + t1 + " matches the expected value.");
 		} catch (AssertionError e) {
