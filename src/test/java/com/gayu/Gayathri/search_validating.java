@@ -173,7 +173,7 @@ public class search_validating {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 50);
 			WebElement brainId = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='10155_anchor']")));
+					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='1_anchor']")));
 			brainId.click();
 			String t1 = brainId.getText();
 			String expectedText = "brain";
