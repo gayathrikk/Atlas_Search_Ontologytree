@@ -35,7 +35,7 @@ public class search_validating {
 		System.out.println("The server is Opened sucessfully");
 		WebDriverWait wait = new WebDriverWait(driver, 50);
 		WebElement viewerSectionLink = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@class, 'ng-tns-c93-3')]")));
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@src='/viewer/assets/images/colorsvg/gallery.svg']")));
 		viewerSectionLink.click();
 		System.out.println("The Viewer Icon is clicked");
 		String parentWindow = driver.getWindowHandle();
@@ -115,17 +115,35 @@ public class search_validating {
 	@Test(priority = 3)
 	public void Direct_Draw_page() throws InterruptedException {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 50);
-			Actions actions = new Actions(driver);
-			actions.keyDown(Keys.SHIFT).sendKeys("o").keyUp(Keys.SHIFT).build().perform();
-
-			System.out.println("Action executed successfully!");
-
-		} catch (NoSuchElementException e) {
-			System.out.println("Element not found: " + e.getMessage());
-		} catch (Exception e) {
-			System.out.println("Error executing action: " + e.getMessage());
-		}
+				WebDriverWait wait = new WebDriverWait(driver, 30);
+				WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@src='/viewer/assets/images/colorsvg/oldmenu.svg']")));
+				menu.click();
+				System.out.println("--------------------------*****************-----------------------");
+				System.out.println("The menu button is clicked");
+			} catch (Exception e) {
+				System.out.println("--------------------------*****************-----------------------");
+				System.out.println("The menu button is not clicked");
+			} 
+			try {
+				WebDriverWait wait = new WebDriverWait(driver, 30);
+				WebElement draw = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@src='/viewer/assets/images/colorsvg/paintbrush.svg']")));
+				draw.click();
+				System.out.println("--------------------------*****************-----------------------");
+				System.out.println("The draw menu button is clicked");
+			} catch (Exception e) {
+				System.out.println("--------------------------*****************-----------------------");
+				System.out.println("The draw menu button is not clicked");
+			}  
+					try {
+						WebDriverWait wait = new WebDriverWait(driver, 30);
+						WebElement unlock = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Unlock']")));
+						unlock.click();
+						System.out.println("--------------------------*****************-----------------------");
+						System.out.println("The Unlock button is clicked");
+					} catch (Exception e) {
+						System.out.println("--------------------------*****************-----------------------");
+						System.out.println("The Unlock button is not clicked");
+					}
 
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 50);
